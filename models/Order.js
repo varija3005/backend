@@ -5,7 +5,7 @@ const OrderSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
-     },
+    },
     products: [{
         prodId: {
             type: Number,
@@ -24,7 +24,24 @@ const OrderSchema = new mongoose.Schema({
     bill: {
         type: Number,
         required: true,
-       default: 0
+        default: 0
+    }, 
+    paymentId: {
+        type: String,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    },
+    status: {
+        type: String,
+        required: true,
+        default: 'Confirmed'
     }
 }, {
     timestamps: true
